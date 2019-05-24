@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sorting Program using JS</title>
+    <style type="text/css">
+      [class^=box]{
+        width:20px;
+        display:inline-block;
+      }
+      .box1{
+        height:20px;
+        background:#e82e8b;
+      }
+      .box2{
+        height:50px;
+        background:#e764a5;
+      }
+      .box3{
+        height:70px;
+        background:#ed93be;
+      }
+      .box4{
+        height:100px;
+        background:#f5c6dd;
+      }
+      .box5{
+        height:130px;
+        background:#f9a145;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Sorting Program</h3>
+    <div class="backbox">
+      <div class="box1"></div>
+      <div class="box2"></div>
+      <div class="box3"></div>
+      <div class="box4"></div>
+      <div class="box5"></div>
+    </div>
+    <div>
+        <input type="text" name="num1" value="6"><br />
+        <input type="text" name="num2" value="3"><br />
+        <input type="text" name="num3" value="1"><br />
+        <input type="text" name="num4" value="4"><br />
+        <input type="text" name="num5" value="9"><br />
+        <button type="button" onclick="Click()">Selection Sort</button>
+    </div>
+    <h4>result</h4><br />
+    <div id="result">
+
+    </div>
+
+    <script>
+      var click = false;
+
+      function selection_sort() {
+        var arrNumber = [];
+
+        for(var i = 0; i < 5; i++) {
+          arrNumber.push(parseInt(document.getElementsByTagName('input')[i].value));
+        }
+
+        for(var i = 0; i < arrNumber.length; i++) {
+          var node = document.createElement("div");
+          var textnode = document.createTextNode(arrNumber[i]);
+          node.appendChild(textnode);
+          document.getElementById("result").appendChild(node);
+        }
+      }
+
+      function Click() {
+        if(click == false) {
+          click = true;
+          selection_sort();
+        } else {
+          alert("Click F5");
+        }
+
+
+      }
+    </script>
+  </body>
+</html>
